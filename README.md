@@ -45,6 +45,8 @@ Após instalar as dependencias
 ```sh
 $ npm start
 ```
+Após inicializado acessar através do browser 
+[a link](http://localhost:4200/)
 
 # API
 Busca de todos os usuários através da porta 8080
