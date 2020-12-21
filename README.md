@@ -11,20 +11,29 @@ Desafio java proporcionado por PD Case .
 
 # Premissas
 
-  - A solução foi desenvolvida, baseada em uma premissa na qual a listagem traz todos os usuários do sistema e o filtro é feito no front-end.
+  - A solução foi desenvolvida baseada na premissa que a listagem traz todos os usuários do sistema e o filtro é feito no front-end.
   - A solução contém em seu serviço o crud completo para a classe user.
   - Ao iniciar o serviço da API, o banco de dados é populado com 5 usuários.
   - A solução foi arquitetada em forma de API e em arquitetura de microserviço.
   - A comunicação do angular com a API é feita através do module HTTPClient.
+  - A solução foi arquitetada em forma de API utilizando o pattern Clean Architecture do uncle bob: é focada em ser de simples leitura, facil manutencao e extensível.
 
 # Melhorias e auto crítica
-O projeto foi criado de uma forma bem simples para o entendimento e de forma a ser o mais claro possível para a leitura do usuário. O front-end é um pouco pobre visualmente, pois foi pensado na ideia de uma tela mais limpa, porém claro a escolha de cores e a adição de novos items entre outros fatores seria de grande valia para o visual da tela. A tabela utilizada no front-end é muito boa porém seria melhor para o caso de grande quantidade de dados, o uso de paginação para garantir velocidade ao carregar a página e os items.
+Acredito que a solução atinge o objetivo de forma prática e rápida. Em cenários de maior escala ou alta utilização, os seguintes pontos seriam endereçados:
 
-Acredito que a solução atinge o objetivo de forma prática e rápida, porém como citado acima existem melhorias tanto no back-end quanto no front-end que deixariam a solução ainda melhor.
+O projeto foi criado de forma simples prezando o entendimento, com foco em usabilidade do usuário final. O front-end foi pensado na ideia de uma tela mais limpa. Caso determinado que a experiência possa ser melhorada, a escolha e a adição de novos items e cores é simples.
+
+Dado que este é um desafio com poucos usuários, o banco escolhido é em memória e não existe paginação na parte de backend. Em um um cenário de maior escala, seria necessário trocar o banco de dados e aplicar a paginação no serviço de API: isso garantiria maior velocidade ao carregar páginas e itens na tela.
+
+O uso de Uuid como primary key para o objeto usuário seria de melhor valia, visto que a quantidade de id's existentes é muito maior e aumenta a segurança (evitando ataques que adivinham o id auto-incrementado, como fuzzy attacks).
+
+
 
 # Como dar Build e rodar
 Este projeto contém uma versão minimizada do maven. Todas as dependencias serão baixadas através do mesmo.
 Executar o "maven Build":
+Todos os testes da aplicação são rodados no momento do build.
+
 Nesta fase serão executados todos os testes para uma pré inicialização.
 ```sh
 $  ./mvnw clean install
@@ -45,9 +54,7 @@ Após instalar as dependencias
 ```sh
 $ npm start
 ```
-Após inicializado acessar através do browser 
-[a link](http://localhost:4200/)
-
+Após inicializado, a aplicação está acessivel na porta 4200
 # API
 Busca de todos os usuários através da porta 8080
  - GET /user/getAll sem parametros e retornando uma lista com todos os usuários presentes no sistema.
