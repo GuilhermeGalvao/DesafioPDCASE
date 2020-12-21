@@ -1,0 +1,57 @@
+.toolbar{
+    align-content: center;
+    text-align:center;
+    align-items: center;
+
+    .search {
+        max-width: 500px;
+        padding-bottom: 50px;
+        margin:auto;
+        margin-top: 16px;
+
+        input{
+            width: 43%;
+        }
+
+        .buttonSearch{
+            color: white;
+            background-color: #5d737e;
+        }
+        input, button {
+            font-size: inherit;
+            padding: 0.2em;
+            margin: 0.1em 0.2em;
+            /* the following ensures they're all using the same box-model for rendering */
+            -moz-box-sizing: content-box; /* or `border-box` */
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+    }
+}
+
+.content{
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    align-content: center;
+    margin: auto;
+
+    table{
+        width: 100%
+    }
+
+    .card-container{
+        max-width: 80%;
+        
+        margin: auto;
+        .mat-list-item, .mat-list-item-content{
+            border-style: solid;
+            border-width: 2px;
+            border-color: dimgray;
+        }
+    }
+}
+
+.mat-header-cell{
+    text-align: center;
+}
